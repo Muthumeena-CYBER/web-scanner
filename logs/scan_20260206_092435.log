@@ -1,0 +1,6 @@
+2026-02-06 09:24:35,154 - scanner - INFO - Starting scan: https://core.telegram.org/ with profile: standard
+2026-02-06 09:24:35,156 - scanner - INFO - Crawling site (max_urls: 30)...
+2026-02-06 09:29:11,695 - scanner - INFO - Found 3060 URLs
+2026-02-06 09:29:57,473 - scanner - WARNING - SQLi found in https://core.telegram.org/?layer=117: 1 issues
+2026-02-06 09:30:55,936 - scanner - INFO - Starting scan: https://core.telegram.org/ with profile: standard
+2026-02-06 09:30:55,939 - scanner - INFO - Crawling site (max_urls: 30)...

@@ -1,0 +1,48 @@
+2026-02-06 11:04:55,987 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: standard
+2026-02-06 11:04:55,989 - scanner - INFO - Crawling site (max_urls: 50)...
+2026-02-06 11:05:25,293 - scanner - INFO - Found 41 URLs
+2026-02-06 11:05:25,839 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/cart.php: 3 issues
+2026-02-06 11:07:07,701 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?artist=2: 1 issues
+2026-02-06 11:07:09,327 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?artist=2: 3 issues
+2026-02-06 11:10:36,268 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/login.php?pp=12: 5 issues
+2026-02-06 11:12:15,915 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=6: 1 issues
+2026-02-06 11:12:16,455 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=6: 5 issues
+2026-02-06 11:12:17,090 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/index.php: 3 issues
+2026-02-06 11:13:56,642 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=3: 1 issues
+2026-02-06 11:13:57,174 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=3: 5 issues
+2026-02-06 11:15:38,057 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-06 11:15:39,748 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=1: 3 issues
+2026-02-06 11:19:04,210 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-06 11:19:05,340 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=2: 3 issues
+2026-02-06 11:20:49,707 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=5: 1 issues
+2026-02-06 11:20:50,263 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=5: 5 issues
+2026-02-06 11:24:22,194 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-06 11:24:22,727 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=3: 3 issues
+2026-02-06 11:26:18,668 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?artist=3: 1 issues
+2026-02-06 11:26:19,196 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?artist=3: 3 issues
+2026-02-06 11:28:00,683 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-06 11:28:02,533 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=4: 3 issues
+2026-02-06 11:33:52,658 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/disclaimer.php: 3 issues
+2026-02-06 11:35:51,019 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/signup.php: 5 issues
+2026-02-06 11:37:35,840 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=7: 1 issues
+2026-02-06 11:37:36,395 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=7: 5 issues
+2026-02-06 11:39:16,776 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-06 11:39:17,317 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=2: 3 issues
+2026-02-06 11:41:08,972 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=2: 1 issues
+2026-02-06 11:41:10,518 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=2: 5 issues
+2026-02-06 11:42:55,552 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-06 11:42:56,091 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=1: 3 issues
+2026-02-06 11:44:42,656 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-06 11:44:43,879 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=3: 3 issues
+2026-02-06 11:46:25,283 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?artist=1: 1 issues
+2026-02-06 11:46:25,804 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?artist=1: 3 issues
+2026-02-06 11:46:26,850 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/guestbook.php: 5 issues
+2026-02-06 11:48:24,485 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=4: 1 issues
+2026-02-06 11:48:25,034 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=4: 5 issues
+2026-02-06 11:48:25,876 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/userinfo.php: 5 issues
+2026-02-06 11:48:26,952 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php: 3 issues
+2026-02-06 11:50:10,593 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/product.php?pic=1: 1 issues
+2026-02-06 11:50:11,119 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/product.php?pic=1: 5 issues
+2026-02-06 11:50:11,665 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/categories.php: 3 issues
+2026-02-06 11:50:13,502 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/login.php: 5 issues
+2026-02-06 11:50:13,505 - scanner - INFO - Scan completed

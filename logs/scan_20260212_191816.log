@@ -1,0 +1,75 @@
+2026-02-12 19:18:16,768 - scanner - INFO - Starting async scan: https://swayam.gov.in/mycourses with profile: quick
+2026-02-12 19:18:18,240 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-12 19:18:37,384 - scanner - INFO - Found 43 URLs
+2026-02-12 19:24:20,043 - scanner - INFO - Scan completed
+2026-02-12 19:32:07,188 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-12 19:32:07,687 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-12 19:32:17,162 - scanner - INFO - Found 20 URLs
+2026-02-12 19:32:20,576 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-12 19:32:21,064 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-12 19:32:21,570 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=4: 3 issues
+2026-02-12 19:32:22,801 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/userinfo.php: 5 issues
+2026-02-12 19:32:26,210 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-12 19:32:26,694 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-12 19:32:27,188 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=3: 3 issues
+2026-02-12 19:32:28,175 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/index.php: 3 issues
+2026-02-12 19:32:28,655 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/categories.php: 3 issues
+2026-02-12 19:32:29,132 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php: 3 issues
+2026-02-12 19:32:29,612 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/cart.php: 3 issues
+2026-02-12 19:32:30,094 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/signup.php: 5 issues
+2026-02-12 19:32:33,905 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-12 19:32:34,381 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-12 19:32:34,873 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=1: 3 issues
+2026-02-12 19:32:38,301 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-12 19:32:38,823 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-12 19:32:39,326 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=3: 3 issues
+2026-02-12 19:32:39,814 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/disclaimer.php: 3 issues
+2026-02-12 19:32:43,221 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-12 19:32:43,736 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-12 19:32:44,224 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=2: 3 issues
+2026-02-12 19:32:44,719 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/guestbook.php: 5 issues
+2026-02-12 19:32:45,712 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/login.php: 5 issues
+2026-02-12 19:32:49,061 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-12 19:32:49,533 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-12 19:32:50,025 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=1: 3 issues
+2026-02-12 19:32:53,477 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-12 19:32:53,982 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-12 19:32:54,454 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=2: 3 issues
+2026-02-12 19:32:54,456 - scanner - INFO - Scan completed
+2026-02-12 19:37:27,281 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: standard
+2026-02-12 19:37:27,826 - scanner - INFO - Crawling site (max_urls: 50)...
+2026-02-12 19:37:40,668 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-12 19:37:41,342 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-12 19:37:46,721 - scanner - INFO - Found 41 URLs
+2026-02-12 19:37:50,365 - scanner - INFO - Found 20 URLs
+2026-02-12 19:37:53,859 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-12 19:37:54,350 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-12 19:37:54,865 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=4: 3 issues
+2026-02-12 19:37:56,082 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/userinfo.php: 5 issues
+2026-02-12 19:37:59,432 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-12 19:37:59,937 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-12 19:38:00,437 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=3: 3 issues
+2026-02-12 19:38:01,375 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/index.php: 3 issues
+2026-02-12 19:38:01,864 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/categories.php: 3 issues
+2026-02-12 19:38:02,322 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php: 3 issues
+2026-02-12 19:38:02,812 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/cart.php: 3 issues
+2026-02-12 19:38:03,315 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/signup.php: 5 issues
+2026-02-12 19:38:07,133 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-12 19:38:07,584 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-12 19:38:08,055 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=1: 3 issues
+2026-02-12 19:38:11,408 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-12 19:38:11,907 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-12 19:38:12,411 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=3: 3 issues
+2026-02-12 19:38:12,888 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/disclaimer.php: 3 issues
+2026-02-12 19:38:16,226 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-12 19:38:16,701 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-12 19:38:17,245 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=2: 3 issues
+2026-02-12 19:38:17,793 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/guestbook.php: 5 issues
+2026-02-12 19:38:18,832 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/login.php: 5 issues
+2026-02-12 19:38:22,679 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-12 19:38:23,179 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-12 19:38:23,684 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=1: 3 issues
+2026-02-12 19:38:27,091 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-12 19:38:27,556 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-12 19:38:28,073 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=2: 3 issues
+2026-02-12 19:38:28,075 - scanner - INFO - Scan completed

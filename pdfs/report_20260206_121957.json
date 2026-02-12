@@ -1,0 +1,1158 @@
+{
+  "scan_id": "20260206_121957",
+  "timestamp": "2026-02-06T12:19:57.143979",
+  "target_url": "http://testphp.vulnweb.com/login.php",
+  "profile": "standard",
+  "scan_config": {
+    "max_urls": 50,
+    "timeout": 10,
+    "depth_limit": 2,
+    "modules": [
+      "sqli",
+      "xss",
+      "csrf"
+    ],
+    "retries": 2
+  },
+  "vulnerabilities": {
+    "csrf": [
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/cart.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/cart.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/cart.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=2",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=2",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=2",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'loginform' (POST userinfo.php) missing CSRF token",
+        "formName": "loginform",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/login.php?pp=12",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/login.php?pp=12",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'loginform' submits to HTTP URL: http://testphp.vulnweb.com/userinfo.php",
+        "formName": "loginform",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/login.php?pp=12",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/login.php?pp=12",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/login.php?pp=12",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=6",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=6",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=6",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=6",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=6",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/index.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/index.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/index.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=3",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=3",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=3",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=3",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=3",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=5",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=5",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=5",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=5",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=5",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=3",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=3",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=3",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/disclaimer.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/disclaimer.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/disclaimer.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'form1' (POST /secured/newuser.php) missing CSRF token",
+        "formName": "form1",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/signup.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/signup.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'form1' submits to HTTP URL: http://testphp.vulnweb.com/secured/newuser.php",
+        "formName": "form1",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/signup.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/signup.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/signup.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=7",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=7",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=7",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=7",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=7",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=2",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=2",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=2",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=2",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=2",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'faddentry' (POST ) missing CSRF token",
+        "formName": "faddentry",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/guestbook.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/guestbook.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'faddentry' submits to HTTP URL: http://testphp.vulnweb.com/guestbook.php",
+        "formName": "faddentry",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/guestbook.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/guestbook.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/guestbook.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=4",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=4",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=4",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=4",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=4",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'loginform' (POST userinfo.php) missing CSRF token",
+        "formName": "loginform",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/userinfo.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/userinfo.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'loginform' submits to HTTP URL: http://testphp.vulnweb.com/userinfo.php",
+        "formName": "loginform",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/userinfo.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/userinfo.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/userinfo.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/artists.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/artists.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/artists.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'f_addcart' (POST cart.php) missing CSRF token",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=1",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/product.php?pic=1",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'f_addcart' submits to HTTP URL: http://testphp.vulnweb.com/cart.php",
+        "formName": "f_addcart",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=1",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/product.php?pic=1",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/product.php?pic=1",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/categories.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/categories.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/categories.php",
+        "vulnerability_type": "No Referer Validation"
+      },
+      {
+        "details": "Form 'loginform' (POST userinfo.php) missing CSRF token",
+        "formName": "loginform",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/login.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'Unnamed Form' (POST search.php?test=query) missing CSRF token",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "Missing CSRF Token",
+        "url": "http://testphp.vulnweb.com/login.php",
+        "vulnerability_type": "Missing CSRF Token"
+      },
+      {
+        "details": "Form 'loginform' submits to HTTP URL: http://testphp.vulnweb.com/userinfo.php",
+        "formName": "loginform",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/login.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Form 'Unnamed Form' submits to HTTP URL: http://testphp.vulnweb.com/search.php?test=query",
+        "formName": "Unnamed Form",
+        "severity": "HIGH",
+        "type": "POST Over HTTP",
+        "url": "http://testphp.vulnweb.com/login.php",
+        "vulnerability_type": "POST Over HTTP"
+      },
+      {
+        "details": "Page does not appear to validate HTTP Referer header",
+        "formName": "Global",
+        "severity": "MEDIUM",
+        "type": "No Referer Validation",
+        "url": "http://testphp.vulnweb.com/login.php",
+        "vulnerability_type": "No Referer Validation"
+      }
+    ],
+    "sqli": [],
+    "xss": [
+      {
+        "param": "artist",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=2"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=6"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=3"
+      },
+      {
+        "param": "cat",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1"
+      },
+      {
+        "param": "artist",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=2"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=5"
+      },
+      {
+        "param": "cat",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=3"
+      },
+      {
+        "param": "artist",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=3"
+      },
+      {
+        "param": "cat",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=4"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=7"
+      },
+      {
+        "param": "cat",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=2"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=2"
+      },
+      {
+        "param": "artist",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=1"
+      },
+      {
+        "param": "artist",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/artists.php?artist=3"
+      },
+      {
+        "param": "artist",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=1"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=4"
+      },
+      {
+        "param": "pic",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "url": "http://testphp.vulnweb.com/product.php?pic=1"
+      }
+    ]
+  },
+  "sitemap_urls": [
+    "http://testphp.vulnweb.com/cart.php",
+    "http://testphp.vulnweb.com/listproducts.php?artist=2",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg",
+    "http://testphp.vulnweb.com/login.php?pp=12",
+    "http://testphp.vulnweb.com/product.php?pic=6",
+    "http://testphp.vulnweb.com/index.php",
+    "http://testphp.vulnweb.com/product.php?pic=3",
+    "http://testphp.vulnweb.com/listproducts.php?cat=1",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg",
+    "http://testphp.vulnweb.com/artists.php?artist=2",
+    "http://testphp.vulnweb.com/product.php?pic=5",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg",
+    "http://testphp.vulnweb.com/AJAX/index.php",
+    "http://testphp.vulnweb.com/listproducts.php?cat=3",
+    "http://testphp.vulnweb.com/hpp/",
+    "http://testphp.vulnweb.com/listproducts.php?artist=3",
+    "http://testphp.vulnweb.com/listproducts.php?cat=4",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg",
+    "http://testphp.vulnweb.com/disclaimer.php",
+    "http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg",
+    "http://testphp.vulnweb.com/signup.php",
+    "http://testphp.vulnweb.com/Mod_Rewrite_Shop/",
+    "http://testphp.vulnweb.com/Details/network-attached-storage-dlink/1/",
+    "http://testphp.vulnweb.com/product.php?pic=7",
+    "http://testphp.vulnweb.com/listproducts.php?cat=2",
+    "http://testphp.vulnweb.com/Details/color-printer/3/",
+    "http://testphp.vulnweb.com/product.php?pic=2",
+    "http://testphp.vulnweb.com/artists.php?artist=1",
+    "http://testphp.vulnweb.com/artists.php?artist=3",
+    "http://testphp.vulnweb.com/listproducts.php?artist=1",
+    "http://testphp.vulnweb.com/Details/web-camera-a4tech/2/",
+    "http://testphp.vulnweb.com/guestbook.php",
+    "http://testphp.vulnweb.com/product.php?pic=4",
+    "http://testphp.vulnweb.com/userinfo.php",
+    "http://testphp.vulnweb.com/privacy.php",
+    "http://testphp.vulnweb.com/artists.php",
+    "http://testphp.vulnweb.com/product.php?pic=1",
+    "http://testphp.vulnweb.com/categories.php",
+    "http://testphp.vulnweb.com/login.php"
+  ],
+  "summary": {
+    "critical_count": 0,
+    "high_count": 17,
+    "medium_count": 105,
+    "total_count": 122
+  },
+  "executive_summary": "\n        Executive Summary:\n        - Target: http://testphp.vulnweb.com/login.php\n        - Scan Date: 2026-02-06T12:19:57.143979\n        - Vulnerabilities Found: 122\n          * SQL Injection: 0\n          * Cross-Site Scripting: 17\n          * CSRF: 105\n        - URLs Scanned: 41\n        ",
+  "proof_of_concepts": {
+    "sqli": [],
+    "xss": [
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=2",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?artist=2?artist=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=6",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=6?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=3",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=3?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?cat=1?cat=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/artists.php?artist=2?artist=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=5",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=5?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?cat=3?cat=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=3",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?artist=3?artist=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?cat=4?cat=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=7",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=7?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "parameter": "cat",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?cat=2?cat=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=2",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=2?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/artists.php?artist=1?artist=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/artists.php?artist=3?artist=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/listproducts.php?artist=1",
+        "parameter": "artist",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/listproducts.php?artist=1?artist=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=4",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=4?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      },
+      {
+        "url": "http://testphp.vulnweb.com/product.php?pic=1",
+        "parameter": "pic",
+        "payload": "<script>alert(\"xss\")</script>",
+        "type": "Reflected XSS",
+        "request": "GET http://testphp.vulnweb.com/product.php?pic=1?pic=<script>alert(\"xss\")</script> HTTP/1.1"
+      }
+    ],
+    "csrf": []
+  }
+}

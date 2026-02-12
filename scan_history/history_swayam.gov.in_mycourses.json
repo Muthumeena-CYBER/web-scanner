@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-02-12T19:24:20.185967",
+    "url": "https://swayam.gov.in/mycourses",
+    "profile": "quick",
+    "vulnerabilities": {
+      "sqli": [],
+      "xss": [],
+      "csrf": []
+    },
+    "sitemap_urls": [
+      "https://swayam.gov.in/about_university",
+      "https://swayam.gov.in/nc_details",
+      "https://swayam.gov.in/nc_details/NIOS",
+      "https://swayam.gov.in/nc_details/IGNOU",
+      "https://swayam.gov.in/CEC",
+      "https://swayam.gov.in/explorer?category=Engineering_and_Technology",
+      "https://swayam.gov.in/explorer?category=Humanities_and_Arts",
+      "https://swayam.gov.in/create_account",
+      "https://swayam.gov.in/NITTTR",
+      "https://swayam.gov.in/nc_details/NCERT",
+      "https://swayam.gov.in/",
+      "https://swayam.gov.in/NCERT",
+      "https://swayam.gov.in/privacy_policy",
+      "https://swayam.gov.in/NIOS",
+      "https://swayam.gov.in/deactivate_account_form",
+      "https://swayam.gov.in/UGC",
+      "https://swayam.gov.in/nc_details/IIMB",
+      "https://swayam.gov.in/faq",
+      "https://swayam.gov.in/explorer",
+      "https://swayam.gov.in/explorer?category=Design",
+      "https://swayam.gov.in/explorer?category=Math_and_Sciences",
+      "https://swayam.gov.in/nc_details/NPTEL",
+      "https://swayam.gov.in/nc_details/INI",
+      "https://swayam.gov.in/terms_of_use",
+      "https://swayam.gov.in/AICTE",
+      "https://swayam.gov.in/NPTEL",
+      "https://swayam.gov.in/explorer?category=Law",
+      "https://swayam.gov.in/nc_details/CEC",
+      "https://swayam.gov.in/explorer?category=Management_and_Commerce",
+      "https://swayam.gov.in/IIMB",
+      "https://swayam.gov.in/about",
+      "https://swayam.gov.in/nc_details/NITTTR",
+      "https://swayam.gov.in/INI",
+      "https://swayam.gov.in/nc_details/UGC",
+      "https://swayam.gov.in/IGNOU",
+      "https://swayam.gov.in/explorer?category=Health_Sciences",
+      "https://swayam.gov.in/honor_code",
+      "https://swayam.gov.in/mycourses",
+      "https://swayam.gov.in/explorer?category=ARCHI_COURSES",
+      "https://swayam.gov.in",
+      "https://swayam.gov.in/nc_details/",
+      "https://swayam.gov.in/explorer?category=POPULAR_COURSES",
+      "https://swayam.gov.in/nc_details/AICTE"
+    ],
+    "summary": {
+      "sqli": 0,
+      "xss": 0,
+      "csrf": 0
+    }
+  }
+]
