@@ -8,13 +8,16 @@ This project scans a target website for:
 - SQL Injection (SQLi)
 - Cross-Site Scripting (XSS)
 - Cross-Site Request Forgery (CSRF)
+- Full TCP Port Scanning (1-65535)
 
 It includes:
 - Python + Flask backend scanner API
 - React + TypeScript frontend dashboard
 - PDF report generation
+- Automatic JSON report generation after each scan
 - Sitemap visualization
 - Scan history storage
+- Async scan progress with scan phases (web scan, port scan, finalizing)
 
 ## Tech stack
 
@@ -105,6 +108,32 @@ Frontend runs at:
 
 The frontend is configured to proxy `/api` calls to the backend on port `5000`.
 
+## Addons implemented
+
+- Full TCP port scanner module in [backend/port_scanner.py](backend/port_scanner.py)
+  - Scans all ports `1..65535`
+  - Uses `socket` + `ThreadPoolExecutor` (no nmap)
+  - Service guessing for common ports
+  - Risk classification (`Low`/`Medium`/`High`)
+  - Safety warning + authorization gating for non-test targets
+- Port scan integrated into main scan response and report
+  - `port_scan_results` included in API response
+  - `overall_risk_score` combines web risk + port risk
+- Improved async progress tracking
+  - URL scanning progress
+  - Port scanning progress (`currentPort` / `totalPorts`)
+  - Phase messages for better UI feedback
+- Automatic JSON report generation
+  - Report is generated automatically after scan completion
+  - Saved in `pdfs/report_*.json`
+- URL handling improvements
+  - Accepts input with or without protocol (`example.com` or `https://example.com`)
+  - Normalizes and validates URL server-side
+- Crawler reliability fixes
+  - Start URL always included in scan targets
+  - Relative links resolved against current page URL
+  - Non-GUI matplotlib backend (`Agg`) to avoid tkinter thread crashes
+
 ## Build frontend for production
 
 ```bash
@@ -122,6 +151,16 @@ curl http://127.0.0.1:5000/health
 ```
 
 Expected: JSON response indicating the server is running.
+
+## Core API fields (scan response)
+
+`POST /scan` and `POST /scan/async` now include:
+
+- `web_vulnerabilities`
+- `port_scan_results`
+- `overall_risk_score`
+- `report_generated`
+- `report_filename` (when report generation succeeds)
 
 ## Common issues
 

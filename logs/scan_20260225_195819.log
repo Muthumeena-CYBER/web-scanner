@@ -1,0 +1,95 @@
+2026-02-25 19:58:19,241 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-25 19:58:19,851 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 19:58:29,327 - scanner - INFO - Found 20 URLs
+2026-02-25 19:58:29,899 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/cart.php: 3 issues
+2026-02-25 19:58:30,398 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/signup.php: 5 issues
+2026-02-25 19:58:33,840 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-25 19:58:34,347 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-25 19:58:34,841 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=3: 3 issues
+2026-02-25 19:58:35,331 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/disclaimer.php: 3 issues
+2026-02-25 19:58:35,851 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/guestbook.php: 5 issues
+2026-02-25 19:58:39,175 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-25 19:58:39,667 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-25 19:58:40,151 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=3: 3 issues
+2026-02-25 19:58:43,525 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-25 19:58:44,012 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-25 19:58:44,502 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=1: 3 issues
+2026-02-25 19:58:45,238 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/userinfo.php: 5 issues
+2026-02-25 19:58:45,740 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/categories.php: 3 issues
+2026-02-25 19:58:49,110 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-25 19:58:49,616 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-25 19:58:50,100 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=2: 3 issues
+2026-02-25 19:58:53,468 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-25 19:58:53,934 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-25 19:58:54,511 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=4: 3 issues
+2026-02-25 19:58:55,004 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php: 3 issues
+2026-02-25 19:58:58,789 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-25 19:58:59,335 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-25 19:58:59,836 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=2: 3 issues
+2026-02-25 19:59:03,171 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-25 19:59:03,655 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-25 19:59:04,139 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=1: 3 issues
+2026-02-25 19:59:04,710 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/login.php: 5 issues
+2026-02-25 19:59:06,646 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/index.php: 3 issues
+2026-02-25 19:59:06,647 - scanner - INFO - Scan completed
+2026-02-25 19:59:06,648 - scanner - INFO - Starting full TCP port scan for testphp.vulnweb.com
+2026-02-25 19:59:06,649 - scanner.port_scanner - INFO - Starting full TCP scan for host=testphp.vulnweb.com ip=44.228.249.3
+2026-02-25 20:01:53,817 - scanner.port_scanner - INFO - Completed full TCP scan for host=testphp.vulnweb.com open_ports=1 risk=Low
+2026-02-25 20:04:10,560 - scanner - INFO - Starting async scan: https://tryhackme.com/dashboard with profile: quick
+2026-02-25 20:04:11,401 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 20:04:14,012 - scanner - INFO - Found 0 URLs
+2026-02-25 20:04:14,013 - scanner - INFO - Scan completed
+2026-02-25 20:04:14,092 - scanner - INFO - Starting full TCP port scan for tryhackme.com
+2026-02-25 20:04:14,094 - scanner.port_scanner - INFO - Starting full TCP scan for host=tryhackme.com ip=104.20.29.66
+2026-02-25 20:07:01,597 - scanner.port_scanner - INFO - Completed full TCP scan for host=tryhackme.com open_ports=10 risk=Medium
+2026-02-25 20:08:12,971 - scanner - INFO - Starting async scan: https://tryhackme.com/dashboard with profile: standard
+2026-02-25 20:08:14,001 - scanner - INFO - Crawling site (max_urls: 50)...
+2026-02-25 20:08:16,596 - scanner - INFO - Found 0 URLs
+2026-02-25 20:08:16,597 - scanner - INFO - Scan completed
+2026-02-25 20:08:16,608 - scanner - WARNING - Port scan blocked by safety policy for target: tryhackme.com
+2026-02-25 20:08:20,576 - scanner - INFO - Starting async scan: https://tryhackme.com/dashboard with profile: quick
+2026-02-25 20:08:21,355 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 20:08:23,411 - scanner - INFO - Found 0 URLs
+2026-02-25 20:08:23,412 - scanner - INFO - Scan completed
+2026-02-25 20:08:23,413 - scanner - INFO - Starting full TCP port scan for tryhackme.com
+2026-02-25 20:08:23,414 - scanner.port_scanner - INFO - Starting full TCP scan for host=tryhackme.com ip=172.66.164.239
+2026-02-25 20:11:10,961 - scanner.port_scanner - INFO - Completed full TCP scan for host=tryhackme.com open_ports=10 risk=Medium
+2026-02-25 20:11:10,996 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-25 20:11:11,586 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 20:11:20,640 - scanner - INFO - Found 20 URLs
+2026-02-25 20:11:21,139 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/cart.php: 3 issues
+2026-02-25 20:11:21,708 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/signup.php: 5 issues
+2026-02-25 20:11:25,097 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-25 20:11:25,568 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-25 20:11:26,049 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=3: 3 issues
+2026-02-25 20:11:26,658 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/disclaimer.php: 3 issues
+2026-02-25 20:11:27,150 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/guestbook.php: 5 issues
+2026-02-25 20:11:30,470 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-25 20:11:30,957 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-25 20:11:31,556 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=3: 3 issues
+2026-02-25 20:14:42,716 - scanner - INFO - Starting async scan: https://infra.cybercom.live/profile with profile: quick
+2026-02-25 20:14:45,052 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 20:15:07,476 - scanner - INFO - Found 9 URLs
+2026-02-25 20:15:11,913 - scanner - WARNING - CSRF found in https://infra.cybercom.live/login: 1 issues
+2026-02-25 20:15:22,058 - scanner - INFO - Scan completed
+2026-02-25 20:15:22,138 - scanner - INFO - Starting full TCP port scan for infra.cybercom.live
+2026-02-25 20:15:22,140 - scanner.port_scanner - INFO - Starting full TCP scan for host=infra.cybercom.live ip=104.21.20.208
+2026-02-25 20:18:10,297 - scanner.port_scanner - INFO - Completed full TCP scan for host=infra.cybercom.live open_ports=7 risk=Medium
+2026-02-25 20:33:21,405 - scanner - INFO - Starting async scan: https://infra.cybercom.live/profile with profile: quick
+2026-02-25 20:33:23,920 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 20:33:41,448 - scanner - INFO - Found 9 URLs
+2026-02-25 20:33:46,411 - scanner - WARNING - CSRF found in https://infra.cybercom.live/login: 1 issues
+2026-02-25 20:33:54,800 - scanner - INFO - Scan completed
+2026-02-25 20:33:54,844 - scanner - INFO - Starting full TCP port scan for infra.cybercom.live
+2026-02-25 20:33:54,845 - scanner.port_scanner - INFO - Starting full TCP scan for host=infra.cybercom.live ip=172.67.194.105
+2026-02-25 20:36:42,152 - scanner.port_scanner - INFO - Completed full TCP scan for host=infra.cybercom.live open_ports=7 risk=Medium
+2026-02-25 20:44:25,011 - scanner - INFO - Starting async scan: https://infra.cybercom.live/ with profile: quick
+2026-02-25 20:44:27,983 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 20:44:51,273 - scanner - INFO - Found 11 URLs
+2026-02-25 20:44:52,563 - scanner - WARNING - CSRF found in https://infra.cybercom.live/register: 1 issues
+2026-02-25 20:45:00,884 - scanner - WARNING - CSRF found in https://infra.cybercom.live/auth/forgot-password: 1 issues
+2026-02-25 20:45:02,177 - scanner - WARNING - CSRF found in https://infra.cybercom.live/login: 1 issues
+2026-02-25 20:45:11,368 - scanner - INFO - Scan completed
+2026-02-25 20:45:11,385 - scanner - INFO - Starting full TCP port scan for infra.cybercom.live
+2026-02-25 20:45:11,387 - scanner.port_scanner - INFO - Starting full TCP scan for host=infra.cybercom.live ip=104.21.20.208
+2026-02-25 20:47:58,861 - scanner.port_scanner - INFO - Completed full TCP scan for host=infra.cybercom.live open_ports=9 risk=Medium

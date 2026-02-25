@@ -7,6 +7,11 @@ import sys
 from pathlib import Path
 
 BACKEND_API_PATH = Path(__file__).parent / "backend" / "api.py"
+BACKEND_DIR = BACKEND_API_PATH.parent
+
+# Ensure backend local imports (e.g., `from crawler import ...`) resolve
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 spec = importlib.util.spec_from_file_location("backend_api", BACKEND_API_PATH)
 if spec is None or spec.loader is None:

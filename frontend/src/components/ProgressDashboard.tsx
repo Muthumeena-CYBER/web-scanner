@@ -3,8 +3,11 @@ import { CheckCircle, AlertCircle, Clock, Ban } from 'lucide-react';
 
 interface ProgressUpdate {
   status: 'scanning' | 'completed' | 'error' | 'canceled' | 'queued';
+  phase?: 'web_scan' | 'port_scan' | 'finalizing' | string;
   currentUrl?: number;
   totalUrls?: number;
+  currentPort?: number;
+  totalPorts?: number;
   message?: string;
   findings?: {
     sqli: number;
@@ -22,9 +25,10 @@ interface ProgressDashboardProps {
 export function ProgressDashboard({ progress, isActive, onCancel }: ProgressDashboardProps) {
   if (!progress) return null;
 
-  const percentage = progress.totalUrls
-    ? Math.round((progress.currentUrl || 0) / progress.totalUrls * 100)
-    : 0;
+  const isPortPhase = progress.phase === 'port_scan';
+  const done = isPortPhase ? (progress.currentPort || 0) : (progress.currentUrl || 0);
+  const total = isPortPhase ? (progress.totalPorts || 0) : (progress.totalUrls || 0);
+  const percentage = total ? Math.round((done / total) * 100) : 0;
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6">
@@ -65,7 +69,9 @@ export function ProgressDashboard({ progress, isActive, onCancel }: ProgressDash
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-gray-600">
-                Scanning URLs: {progress.currentUrl || 0}/{progress.totalUrls || '...'}
+                {isPortPhase
+                  ? `Scanning Ports: ${progress.currentPort || 0}/${progress.totalPorts || '...'}`
+                  : `Scanning URLs: ${progress.currentUrl || 0}/${progress.totalUrls || '...'}`}
               </span>
               <span className="text-sm font-semibold text-gray-900">{percentage}%</span>
             </div>

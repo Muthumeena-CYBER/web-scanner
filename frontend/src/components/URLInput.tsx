@@ -13,9 +13,15 @@ export const URLInput: React.FC<URLInputProps> = ({ onScan, isLoading, value, on
   const [error, setError] = useState<string>('');
   const url = value !== undefined ? value : internalUrl;
 
+  const normalizeUrl = (urlString: string): string => {
+    const trimmed = urlString.trim();
+    if (!trimmed) return '';
+    return /^https?:\/\//i.test(trimmed) ? trimmed : `http://${trimmed}`;
+  };
+
   const validateUrl = (urlString: string): boolean => {
     try {
-      const urlObj = new URL(urlString);
+      const urlObj = new URL(normalizeUrl(urlString));
       return urlObj.protocol === 'http:' || urlObj.protocol === 'https:';
     } catch {
       return false;
@@ -36,7 +42,7 @@ export const URLInput: React.FC<URLInputProps> = ({ onScan, isLoading, value, on
       return;
     }
 
-    onScan(url);
+    onScan(normalizeUrl(url));
   };
 
   return (
@@ -52,14 +58,14 @@ export const URLInput: React.FC<URLInputProps> = ({ onScan, isLoading, value, on
               type="text"
               value={url}
               onChange={(e) => {
-      if (onUrlChange) {
-        onUrlChange(e.target.value);
-      } else {
-        setInternalUrl(e.target.value);
-      }
-      setError('');
-    }}
-              placeholder="https://example.com"
+              if (onUrlChange) {
+                onUrlChange(e.target.value);
+              } else {
+                setInternalUrl(e.target.value);
+              }
+              setError('');
+            }}
+              placeholder="example.com or https://example.com"
               className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors"
               disabled={isLoading}
             />

@@ -25,9 +25,12 @@ class ReportGenerator:
     
     def generate_json(self):
         """Generate JSON report."""
+        web_vulnerabilities = self.results.get('web_vulnerabilities') or self.results.get('vulnerabilities', {})
         report_data = {
             'scan_id': self.scan_id,
             'timestamp': self.timestamp.isoformat(),
+            'target': self.results.get('target') or self.config.url,
+            'scan_time': self.results.get('scan_time') or self.timestamp.isoformat(),
             'target_url': self.config.url,
             'profile': self.config.profile_name,
             'scan_config': {
@@ -37,7 +40,10 @@ class ReportGenerator:
                 'modules': self.config.modules,
                 'retries': self.config.retries,
             },
-            'vulnerabilities': self.results.get('vulnerabilities', {}),
+            'web_vulnerabilities': web_vulnerabilities,
+            'vulnerabilities': web_vulnerabilities,
+            'port_scan_results': self.results.get('port_scan_results', {}),
+            'overall_risk_score': self.results.get('overall_risk_score', 'Low'),
             'sitemap_urls': self.results.get('sitemap_urls', []),
             'summary': self._generate_summary(),
             'executive_summary': self._generate_executive_summary(),
@@ -300,7 +306,7 @@ class ReportGenerator:
     
     def _generate_summary(self):
         """Generate vulnerability summary."""
-        vulns = self.results.get('vulnerabilities', {})
+        vulns = self.results.get('web_vulnerabilities') or self.results.get('vulnerabilities', {})
         return {
             'critical_count': len(vulns.get('sqli', [])),
             'high_count': len(vulns.get('xss', [])),
@@ -311,7 +317,6 @@ class ReportGenerator:
     def _generate_executive_summary(self):
         """Generate executive summary text."""
         summary = self._generate_summary()
-        vulns = self.results.get('vulnerabilities', {})
         
         text = f"""
         Executive Summary:
@@ -333,7 +338,7 @@ class ReportGenerator:
             'csrf': []
         }
         
-        vulns = self.results.get('vulnerabilities', {})
+        vulns = self.results.get('web_vulnerabilities') or self.results.get('vulnerabilities', {})
         
         for vuln in vulns.get('sqli', []):
             poc_data['sqli'].append({

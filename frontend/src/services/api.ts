@@ -29,6 +29,7 @@ const buildScanPayload = (options: ScanOptions) => {
   return {
     url: options.url,
     profile: options.profile,
+    authorization_confirmed: !!options.authorizationConfirmed,
     custom_config: customConfig,
     check_sqli: options.checkSQLi,
     check_xss: options.checkXSS,

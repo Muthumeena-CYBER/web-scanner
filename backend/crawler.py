@@ -5,6 +5,8 @@ from utils import same_domain, normalize_url
 from datetime import datetime
 from urllib.parse import urlparse
 import networkx as nx
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import os
@@ -26,7 +28,8 @@ def crawl_site(start_url, max_urls=50, timeout=5, depth_limit=3):
     """
     visited = set()
     to_visit = [(start_url, 0)]  # (url, depth)
-    found_urls = set()
+    # Always include start URL in scan target list.
+    found_urls = {start_url}
     sitemap_data = []  # Store detailed URL info for sitemap
     url_graph = nx.DiGraph()  # Create directed graph for visualization
     url_graph.add_node(start_url, status="starting", depth=0)
@@ -65,7 +68,8 @@ def crawl_site(start_url, max_urls=50, timeout=5, depth_limit=3):
                 if 'html' in content_type or not content_type:
                     soup = BeautifulSoup(res.text, "html.parser")
                     for link in soup.find_all("a", href=True):
-                        full_url = normalize_url(start_url, link["href"])
+                        # Resolve relative links against the current page URL.
+                        full_url = normalize_url(url, link["href"])
                         if same_domain(start_url, full_url):
                             found_urls.add(full_url)
                             if full_url not in url_graph:

@@ -1,0 +1,44 @@
+2026-02-25 19:47:33,391 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-25 19:47:34,067 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 19:47:45,745 - scanner - INFO - Found 20 URLs
+2026-02-25 19:47:46,306 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/categories.php: 3 issues
+2026-02-25 19:47:50,219 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-25 19:47:50,736 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=1: 1 issues
+2026-02-25 19:47:51,258 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=1: 3 issues
+2026-02-25 19:47:54,719 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-25 19:47:55,213 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=2: 1 issues
+2026-02-25 19:47:55,698 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=2: 3 issues
+2026-02-25 19:47:59,177 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-25 19:47:59,646 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=4: 1 issues
+2026-02-25 19:48:00,141 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=4: 3 issues
+2026-02-25 19:48:03,459 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-25 19:48:03,943 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=3: 1 issues
+2026-02-25 19:48:04,431 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=3: 3 issues
+2026-02-25 19:48:04,943 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/signup.php: 5 issues
+2026-02-25 19:48:05,444 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php: 3 issues
+2026-02-25 19:48:05,955 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/guestbook.php: 5 issues
+2026-02-25 19:48:06,431 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/disclaimer.php: 3 issues
+2026-02-25 19:48:06,930 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/login.php: 5 issues
+2026-02-25 19:48:10,895 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-25 19:48:11,395 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=1: 1 issues
+2026-02-25 19:48:11,850 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=1: 3 issues
+2026-02-25 19:48:15,167 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-25 19:48:15,637 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/listproducts.php?cat=2: 1 issues
+2026-02-25 19:48:16,124 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/listproducts.php?cat=2: 3 issues
+2026-02-25 19:48:19,488 - scanner - WARNING - SQLi found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-25 19:48:19,987 - scanner - WARNING - XSS found in http://testphp.vulnweb.com/artists.php?artist=3: 1 issues
+2026-02-25 19:48:20,467 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/artists.php?artist=3: 3 issues
+2026-02-25 19:48:20,968 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/index.php: 3 issues
+2026-02-25 19:48:22,731 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/userinfo.php: 5 issues
+2026-02-25 19:48:23,201 - scanner - WARNING - CSRF found in http://testphp.vulnweb.com/cart.php: 3 issues
+2026-02-25 19:48:23,202 - scanner - INFO - Scan completed
+2026-02-25 19:48:23,280 - scanner - WARNING - Port scan blocked by safety policy for target: testphp.vulnweb.com
+2026-02-25 19:54:23,257 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: standard
+2026-02-25 19:54:23,939 - scanner - INFO - Crawling site (max_urls: 50)...
+2026-02-25 19:54:40,246 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-25 19:54:47,083 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 19:54:54,458 - scanner - INFO - Found 0 URLs
+2026-02-25 19:54:54,459 - scanner - INFO - Scan completed
+2026-02-25 19:54:54,463 - scanner - INFO - Starting full TCP port scan for testphp.vulnweb.com
+2026-02-25 19:54:54,467 - scanner.port_scanner - INFO - Starting full TCP scan for host=testphp.vulnweb.com ip=44.228.249.3
+2026-02-25 19:55:12,194 - scanner - INFO - Found 41 URLs

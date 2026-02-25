@@ -29,8 +29,11 @@ interface ScanConfig {
 
 interface ProgressUpdate {
   status: ProgressStatus;
+  phase?: 'web_scan' | 'port_scan' | 'finalizing' | string;
   currentUrl?: number;
   totalUrls?: number;
+  currentPort?: number;
+  totalPorts?: number;
   message?: string;
   findings?: {
     sqli: number;
@@ -84,6 +87,10 @@ function App() {
   }, []);
 
   const handleScan = async (url: string) => {
+    const authorizationConfirmed = window.confirm(
+      'Unauthorized port scanning is illegal. Confirm you are authorized to scan this target.'
+    );
+
     setLoading(true);
     setError(null);
     setResult(null);
@@ -96,6 +103,7 @@ function App() {
         checkSQLi: scanConfig.modules.sqli,
         checkXSS: scanConfig.modules.xss,
         checkCSRF: scanConfig.modules.csrf,
+        authorizationConfirmed,
         profile: scanConfig.profile,
         customConfig: {
           maxUrls: scanConfig.maxUrls,
@@ -115,8 +123,11 @@ function App() {
           const status = await scannerAPI.getScanStatus(newScanId);
           setProgress({
             status: status.status,
+            phase: status.phase,
             currentUrl: status.currentUrl,
             totalUrls: status.totalUrls,
+            currentPort: status.currentPort,
+            totalPorts: status.totalPorts,
             message: status.message,
             findings: status.findings,
           });

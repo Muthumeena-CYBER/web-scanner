@@ -1,0 +1,55 @@
+[
+  {
+    "timestamp": "2026-02-25T20:47:58.943167",
+    "url": "https://infra.cybercom.live/",
+    "profile": "quick",
+    "vulnerabilities": {
+      "sqli": [],
+      "xss": [],
+      "csrf": [
+        {
+          "url": "https://infra.cybercom.live/register",
+          "formName": "Global",
+          "vulnerability_type": "No Referer Validation",
+          "type": "No Referer Validation",
+          "severity": "MEDIUM",
+          "details": "Page does not appear to validate HTTP Referer header"
+        },
+        {
+          "url": "https://infra.cybercom.live/auth/forgot-password",
+          "formName": "Global",
+          "vulnerability_type": "No Referer Validation",
+          "type": "No Referer Validation",
+          "severity": "MEDIUM",
+          "details": "Page does not appear to validate HTTP Referer header"
+        },
+        {
+          "url": "https://infra.cybercom.live/login",
+          "formName": "Global",
+          "vulnerability_type": "No Referer Validation",
+          "type": "No Referer Validation",
+          "severity": "MEDIUM",
+          "details": "Page does not appear to validate HTTP Referer header"
+        }
+      ]
+    },
+    "sitemap_urls": [
+      "https://infra.cybercom.live/register",
+      "https://infra.cybercom.live/challenges",
+      "https://infra.cybercom.live/wall-of-shame",
+      "https://infra.cybercom.live/auth/forgot-password",
+      "https://infra.cybercom.live/login",
+      "https://infra.cybercom.live/first-blood-scoreboard",
+      "https://infra.cybercom.live/leaderboard",
+      "https://infra.cybercom.live/",
+      "https://infra.cybercom.live/dashboard",
+      "https://infra.cybercom.live/matrix",
+      "https://infra.cybercom.live/players"
+    ],
+    "summary": {
+      "sqli": 0,
+      "xss": 0,
+      "csrf": 3
+    }
+  }
+]

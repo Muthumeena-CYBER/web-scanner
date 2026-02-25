@@ -15,6 +15,13 @@ def setup_logger(verbose=False):
     """Setup logger with optional verbose mode."""
     logger = logging.getLogger('scanner')
     logger.setLevel(logging.DEBUG if verbose else logging.INFO)
+
+    # Prevent duplicate logs when setup_logger is called multiple times.
+    if logger.handlers:
+        for handler in logger.handlers:
+            if isinstance(handler, logging.StreamHandler):
+                handler.setLevel(logging.DEBUG if verbose else logging.INFO)
+        return logger
     
     # Console handler
     console_handler = logging.StreamHandler()

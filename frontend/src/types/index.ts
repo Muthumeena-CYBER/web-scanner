@@ -1,6 +1,9 @@
 export interface ScanResult {
   url: string;
   timestamp: string;
+  target?: string;
+  scan_time?: string;
+  overall_risk_score?: 'Low' | 'Medium' | 'High' | string;
   profile?: string;
   success?: boolean;
   scan_start_time?: string;
@@ -35,6 +38,26 @@ export interface ScanResult {
     sqli: VulnerabilityFinding[];
     xss: VulnerabilityFinding[];
     csrf: VulnerabilityFinding[];
+  };
+  web_vulnerabilities?: {
+    sqli: VulnerabilityFinding[];
+    xss: VulnerabilityFinding[];
+    csrf: VulnerabilityFinding[];
+  };
+  port_scan_results?: {
+    target_host?: string;
+    target_ip?: string;
+    total_ports_scanned?: number;
+    open_ports_count?: number;
+    open_ports?: Array<{
+      port: number;
+      service_guess: string;
+      risk: 'Low' | 'Medium' | 'High' | string;
+    }>;
+    risk_summary?: 'Low' | 'Medium' | 'High' | string;
+    safety_warning?: string;
+    scan_status?: 'completed' | 'blocked' | 'error' | 'skipped' | string;
+    reason?: string;
   };
   sitemapData?: {
     urls: string[];
@@ -72,6 +95,7 @@ export interface ScanOptions {
   checkSQLi: boolean;
   checkXSS: boolean;
   checkCSRF: boolean;
+  authorizationConfirmed?: boolean;
   profile?: 'quick' | 'standard' | 'full' | 'aggressive' | 'custom';
   customConfig?: {
     maxUrls?: number;

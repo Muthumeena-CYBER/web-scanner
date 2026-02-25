@@ -19,6 +19,7 @@ from crawler import crawl_site
 from detector import test_sqli
 from xss_detector import test_xss
 from csrf_detector import test_csrf
+from port_scanner import scan_all_ports, resolve_hostname, is_scan_allowed, SAFETY_WARNING
 from config import ScanConfig, SCAN_PROFILES, setup_logger
 from report_generator import ReportGenerator
 from scan_history import ScanHistoryTracker
@@ -106,6 +107,22 @@ def _build_config(data):
     return url, profile, custom_config
 
 
+def _normalize_and_validate_url(raw_url):
+    """Accept URLs with/without scheme and return normalized http(s) URL."""
+    candidate = (raw_url or '').strip()
+    if not candidate:
+        raise ValueError('URL is required')
+
+    if not candidate.startswith(('http://', 'https://')):
+        candidate = 'http://' + candidate
+
+    parsed = urlparse(candidate)
+    if parsed.scheme not in ('http', 'https') or not parsed.netloc:
+        raise ValueError('Invalid URL format')
+
+    return candidate
+
+
 def _detect_server_type(target_url):
     """Detect server type using HTTP response headers."""
     try:
@@ -161,7 +178,8 @@ def _perform_scan(config, url, scan_id=None):
     
     if scan_id:
         _set_progress(scan_id, status='scanning', currentUrl=0, totalUrls=0,
-                      message='Crawling site...', findings={'sqli': 0, 'xss': 0, 'csrf': 0})
+                      message='Crawling site...', phase='web_scan',
+                      findings={'sqli': 0, 'xss': 0, 'csrf': 0})
     
     # Crawl site with configured depth
     config.logger.info(f"Crawling site (max_urls: {config.max_urls})...")
@@ -305,16 +323,102 @@ def _perform_scan(config, url, scan_id=None):
                 'csrf': len(results['csrf'])
             })
     
-    config.logger.info("Scan completed")
+    config.logger.info("Web vulnerability scan phase completed")
+    if scan_id:
+        _set_progress(
+            scan_id,
+            message="Web vulnerability scan completed. Starting full TCP port scan...",
+            phase="port_scan",
+        )
+
     scan_ended_at = datetime.now()
     scan_duration_seconds = max(0.0, time.perf_counter() - scan_start_perf)
     average_response_time_ms = (
         sum(detector_timings_ms) / len(detector_timings_ms) if detector_timings_ms else 0.0
     )
     
+    target_host, _ = resolve_hostname(url)
+    authorization_confirmed = bool(getattr(config, "authorization_confirmed", False))
+    port_scan_enabled = bool(getattr(config, "enable_port_scan", True))
+    port_scan_results = {
+        "total_ports_scanned": 0,
+        "open_ports_count": 0,
+        "open_ports": [],
+        "risk_summary": "Low",
+        "safety_warning": SAFETY_WARNING,
+        "scan_status": "skipped",
+        "reason": "Port scanning disabled",
+    }
+
+    if port_scan_enabled:
+        if is_scan_allowed(target_host, authorization_confirmed):
+            try:
+                config.logger.info("Starting full TCP port scan for %s", target_host)
+                port_scan_results = scan_all_ports(
+                    target_host,
+                    progress_callback=(
+                        (lambda scanned, total, open_count: _set_progress(
+                            scan_id,
+                            phase='port_scan',
+                            currentPort=scanned,
+                            totalPorts=total,
+                            message=f"Port scan running: {scanned}/{total} ports checked, open={open_count}"
+                        )) if scan_id else None
+                    ),
+                )
+                port_scan_results["scan_status"] = "completed"
+                if scan_id:
+                    _set_progress(
+                        scan_id,
+                        message=(
+                            f"Port scan completed. Open ports found: {port_scan_results.get('open_ports_count', 0)}"
+                        ),
+                        phase="finalizing",
+                    )
+            except Exception as exc:
+                config.logger.exception("Port scan failed: %s", exc)
+                port_scan_results = {
+                    "total_ports_scanned": 0,
+                    "open_ports_count": 0,
+                    "open_ports": [],
+                    "risk_summary": "Low",
+                    "safety_warning": SAFETY_WARNING,
+                    "scan_status": "error",
+                    "reason": str(exc),
+                }
+                if scan_id:
+                    _set_progress(scan_id, message="Port scan failed. Finalizing report...", phase="finalizing")
+        else:
+            config.logger.warning("Port scan blocked by safety policy for target: %s", target_host)
+            port_scan_results = {
+                "total_ports_scanned": 0,
+                "open_ports_count": 0,
+                "open_ports": [],
+                "risk_summary": "Low",
+                "safety_warning": SAFETY_WARNING,
+                "scan_status": "blocked",
+                "reason": (
+                    "Port scan blocked: authorization confirmation required for non-local/non-test targets."
+                ),
+            }
+            if scan_id:
+                _set_progress(scan_id, message="Port scan blocked by safety policy. Finalizing report...", phase="finalizing")
+
+    # Capture final end time after all scan phases (web + port scan) finish.
+    scan_ended_at = datetime.now()
+    scan_duration_seconds = max(0.0, time.perf_counter() - scan_start_perf)
+
+    web_risk_score = _compute_web_risk(results)
+    overall_risk_score = _merge_overall_risk(
+        web_risk_score,
+        port_scan_results.get("risk_summary", "Low"),
+    )
+
     # Prepare response
     response_data = {
         'success': True,
+        'target': target_host,
+        'scan_time': datetime.now().isoformat(),
         'url': url,
         'profile': config.profile_name,
         'timestamp': datetime.now().isoformat(),
@@ -338,7 +442,10 @@ def _perform_scan(config, url, scan_id=None):
                 'entries': payload_entries
             }
         },
+        'web_vulnerabilities': results,
         'vulnerabilities': results,
+        'port_scan_results': port_scan_results,
+        'overall_risk_score': overall_risk_score,
         'sitemap_urls': sitemap_urls,
         'sitemapData': {
             'urls': sitemap_urls,
@@ -352,11 +459,42 @@ def _perform_scan(config, url, scan_id=None):
             'total_vulnerabilities': sum(len(v) for v in results.values()),
             'sqli_count': len(results['sqli']),
             'xss_count': len(results['xss']),
-            'csrf_count': len(results['csrf'])
+            'csrf_count': len(results['csrf']),
+            'web_risk_score': web_risk_score,
+            'port_risk_score': port_scan_results.get('risk_summary', 'Low'),
         }
     }
-    
+
+    # Always generate a structured JSON report file after scan completion.
+    try:
+        generator = ReportGenerator(response_data, config)
+        report_path, _ = generator.generate_json()
+        response_data['report_generated'] = True
+        response_data['report_filename'] = os.path.basename(report_path)
+    except Exception as exc:
+        config.logger.exception("Failed to auto-generate JSON report: %s", exc)
+        response_data['report_generated'] = False
+        response_data['report_error'] = str(exc)
+
     return response_data
+
+
+def _compute_web_risk(vuln_results):
+    """Compute overall risk from web vulnerabilities only."""
+    if vuln_results.get('sqli'):
+        return 'High'
+    if vuln_results.get('xss') or vuln_results.get('csrf'):
+        return 'Medium'
+    return 'Low'
+
+
+def _merge_overall_risk(web_risk, port_risk):
+    """Combine web + port risk using max severity."""
+    severity = {'Low': 1, 'Medium': 2, 'High': 3}
+    inverse = {1: 'Low', 2: 'Medium', 3: 'High'}
+    normalized_web = web_risk if web_risk in severity else 'Low'
+    normalized_port = port_risk if port_risk in severity else 'Low'
+    return inverse[max(severity[normalized_web], severity[normalized_port])]
 
 
 def _load_latest_sitemap_image(target_url):
@@ -467,15 +605,19 @@ def scan():
         
         url, profile, custom_config = _build_config(data)
         
-        # Validate URL
-        if not url:
-            return jsonify({'error': 'URL is required'}), 400
-        
-        if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+        try:
+            url = _normalize_and_validate_url(url)
+        except ValueError as exc:
+            return jsonify({'error': str(exc)}), 400
         
         # Create scan config
         config = ScanConfig(url, profile, custom_config)
+        config.authorization_confirmed = bool(
+            data.get('authorization_confirmed')
+            or data.get('authorized_scan')
+            or custom_config.get('authorization_confirmed')
+        )
+        config.enable_port_scan = bool(custom_config.get('enable_port_scan', True))
         config.logger.info(f"Starting scan: {url} with profile: {profile}")
         
         response_data = _perform_scan(config, url)
@@ -508,11 +650,10 @@ def scan_async():
         
         url, profile, custom_config = _build_config(data)
         
-        if not url:
-            return jsonify({'error': 'URL is required'}), 400
-        
-        if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+        try:
+            url = _normalize_and_validate_url(url)
+        except ValueError as exc:
+            return jsonify({'error': str(exc)}), 400
         
         scan_id = str(uuid.uuid4())
         _set_progress(scan_id, status='queued', currentUrl=0, totalUrls=0,
@@ -521,6 +662,12 @@ def scan_async():
         def run_scan():
             try:
                 config = ScanConfig(url, profile, custom_config)
+                config.authorization_confirmed = bool(
+                    data.get('authorization_confirmed')
+                    or data.get('authorized_scan')
+                    or custom_config.get('authorization_confirmed')
+                )
+                config.enable_port_scan = bool(custom_config.get('enable_port_scan', True))
                 config.logger.info(f"Starting async scan: {url} with profile: {profile}")
                 _set_progress(scan_id, status='scanning', message='Starting scan...')
                 
@@ -588,11 +735,10 @@ def get_sitemap():
     try:
         url = request.args.get('url', '').strip()
         
-        if not url:
-            return jsonify({'error': 'URL parameter is required'}), 400
-        
-        if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+        try:
+            url = _normalize_and_validate_url(url)
+        except ValueError as exc:
+            return jsonify({'error': f'URL parameter is invalid: {exc}'}), 400
         
         urls = crawl_site(url)
         
@@ -689,11 +835,10 @@ def get_history():
     try:
         url = request.args.get('url', '').strip()
         
-        if not url:
-            return jsonify({'error': 'URL parameter is required'}), 400
-        
-        if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+        try:
+            url = _normalize_and_validate_url(url)
+        except ValueError as exc:
+            return jsonify({'error': f'URL parameter is invalid: {exc}'}), 400
         
         history = history_tracker.get_scan_history(url)
         latest = history_tracker.get_latest_scan(url)
@@ -729,11 +874,10 @@ def compare_scans():
     try:
         url = request.args.get('url', '').strip()
         
-        if not url:
-            return jsonify({'error': 'URL parameter is required'}), 400
-        
-        if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+        try:
+            url = _normalize_and_validate_url(url)
+        except ValueError as exc:
+            return jsonify({'error': f'URL parameter is invalid: {exc}'}), 400
         
         scan1_idx = request.args.get('scan1', type=int)
         scan2_idx = request.args.get('scan2', type=int)

@@ -1,0 +1,7 @@
+2026-02-25 19:54:40,246 - scanner - INFO - Starting async scan: http://testphp.vulnweb.com/login.php with profile: quick
+2026-02-25 19:54:47,083 - scanner - INFO - Crawling site (max_urls: 10)...
+2026-02-25 19:54:54,458 - scanner - INFO - Found 0 URLs
+2026-02-25 19:54:54,459 - scanner - INFO - Scan completed
+2026-02-25 19:54:54,463 - scanner - INFO - Starting full TCP port scan for testphp.vulnweb.com
+2026-02-25 19:54:54,467 - scanner.port_scanner - INFO - Starting full TCP scan for host=testphp.vulnweb.com ip=44.228.249.3
+2026-02-25 19:55:12,194 - scanner - INFO - Found 41 URLs

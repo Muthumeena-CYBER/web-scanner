@@ -103,6 +103,12 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ url, results, onDown
       const sqli = results.vulnerabilities?.sqli || [];
       const xss = results.vulnerabilities?.xss || [];
       const csrf = results.vulnerabilities?.csrf || [];
+      const portScan = results.port_scan_results;
+      const portRisk = portScan?.risk_summary || 'Low';
+      const portStatus = portScan?.scan_status || 'skipped';
+      const openPorts = portScan?.open_ports || [];
+      const openPortCount = portScan?.open_ports_count ?? openPorts.length;
+      const totalPortsScanned = portScan?.total_ports_scanned ?? 0;
       const totalUrls = results.sitemapData?.totalUrls ?? results.sitemap_urls?.length ?? 0;
       const totalVulns = sqli.length + xss.length + csrf.length;
 
@@ -118,7 +124,10 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ url, results, onDown
         Low: allSeverities.filter((s) => s === 'Low').length,
       };
 
-      const overallRisk = overallRiskFromCounts(severityCounts);
+      const webOnlyRisk = overallRiskFromCounts(severityCounts);
+      const overallRisk = (results.overall_risk_score as Severity | undefined) || (
+        portRisk === 'High' ? 'High' : portRisk === 'Medium' && webOnlyRisk === 'Low' ? 'Medium' : webOnlyRisk
+      );
 
       const scanStart = results.scan_start_time || results.timestamp;
       const scanEnd = results.scan_end_time || results.timestamp;
@@ -315,6 +324,8 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ url, results, onDown
       const summaryRows: Array<{ label: string; value: string; color?: RGB }> = [
         { label: 'URLs Scanned', value: String(totalUrls) },
         { label: 'Total Vulnerabilities', value: String(totalVulns) },
+        { label: 'Open Ports', value: String(openPortCount) },
+        { label: 'Port Risk', value: portRisk },
         { label: 'SQL Injection', value: String(sqli.length), color: COLORS.modules.sqli },
         { label: 'Cross-Site Scripting', value: String(xss.length), color: COLORS.modules.xss },
         { label: 'CSRF', value: String(csrf.length), color: COLORS.modules.csrf },
@@ -338,9 +349,19 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ url, results, onDown
 
       writeSectionTitle('Executive Summary');
       writeKeyValue('Target Domain', getHostname(results.url || url));
+      writeKeyValue('Port Scan Status', portStatus);
+      writeKeyValue('Ports Scanned', `${totalPortsScanned}`);
+      writeKeyValue('Open Ports Found', `${openPortCount}`);
+      writeKeyValue('Port Scan Risk', portRisk);
       writeKeyValue('Total Requests Sent', `${totalRequestsSent}`);
       writeKeyValue('Total Forms Detected', `${totalFormsDetected}`);
       writeKeyValue('Total Input Parameters Tested', `${totalParamsTested}`);
+      if (portScan?.reason) {
+        writeKeyValue('Port Scan Note', portScan.reason);
+      }
+      if (portScan?.safety_warning) {
+        writeKeyValue('Safety Warning', portScan.safety_warning);
+      }
       y += 2;
 
       const posture =
@@ -487,6 +508,25 @@ export const PDFGenerator: React.FC<PDFGeneratorProps> = ({ url, results, onDown
         payloadEntries.map((p) => [p.vulnerabilityType, p.payloadUsed, p.status, String(p.responseCode)]),
         [42, 95, 25, contentWidth - 162],
       );
+
+      y += 2;
+      writeSectionTitle('Port Scanning Results');
+      writeKeyValue('Scan Status', portStatus);
+      writeKeyValue('Target Host', portScan?.target_host || getHostname(results.url || url));
+      writeKeyValue('Target IP', portScan?.target_ip || '-');
+      writeKeyValue('Total TCP Ports Scanned', `${totalPortsScanned}`);
+      writeKeyValue('Open Ports Count', `${openPortCount}`);
+      writeKeyValue('Risk Summary', portRisk);
+      if (openPorts.length > 0) {
+        drawTable(
+          ['Port', 'Service Guess', 'Risk'],
+          openPorts.slice(0, 200).map((p) => [String(p.port), p.service_guess, p.risk]),
+          [30, 90, contentWidth - 120],
+        );
+      }
+      if (openPorts.length > 200) {
+        writeWrapped(`Showing first 200 open ports out of ${openPorts.length}.`);
+      }
 
       y += 2;
       writeSectionTitle('Performance Metrics');
